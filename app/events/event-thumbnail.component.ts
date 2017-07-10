@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Event } from './event.model';
+import { Event as IEvent } from './event.model';
 
 @Component({
   selector: 'event-thumbnail',
@@ -42,7 +42,7 @@ import { Event } from './event.model';
   `]
 })
 export class EventThumbnailComponent {
-  @Input() event:Event;
+  @Input() event:IEvent;
 
   private timeType() {
     switch (this.event.time) {
