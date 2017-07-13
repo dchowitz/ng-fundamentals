@@ -6,7 +6,8 @@
       <div class="form-group"
         [ngClass]="{ 'error': isInvalidFirstName() }">
         <label for="firstName">First Name:</label>
-        <em *ngIf="isInvalidFirstName()">Required</em>
+        <em *ngIf="isInvalidFirstName() && firstName.errors.required">Required</em>
+        <em *ngIf="isInvalidFirstName() && firstName.errors.pattern">Must start with a letter</em>
         <input formControlName="firstName" id="firstName" type="text" class="form-control" placeholder="First Name..." />
       </div>
       <div class="form-group"
