@@ -12,7 +12,7 @@ import { EventService } from './event.service';
   `]
 })
 export class CreateEventComponent {
-  isDirty = true
+  isDirty = true;
 
   constructor(private router: Router, private eventService: EventService) {
   }

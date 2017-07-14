@@ -9,6 +9,7 @@ import {
   EventThumbnailComponent,
   EventDetailsComponent,
   CreateEventComponent,
+  CreateSessionComponent,
   EventService,
   EventRouteActivatorService,
   EventsListResolverService
@@ -32,6 +33,7 @@ import routes from './routes';
     EventThumbnailComponent,
     EventDetailsComponent,
     CreateEventComponent,
+    CreateSessionComponent,
     NavBarComponent,
     Error404Component
   ],
