@@ -25,7 +25,8 @@ export class CreateSessionComponent implements OnInit {
     this.level = new FormControl('', Validators.required);
     this.abstract = new FormControl('', [
       Validators.required,
-      Validators.maxLength(400)
+      Validators.maxLength(400),
+      this.restrictedWords('foo', 'bar')
     ]);
 
     this.newSessionForm = new FormGroup({
@@ -48,5 +49,14 @@ export class CreateSessionComponent implements OnInit {
       voters: []
     };
     console.log(session);
+  }
+
+  restrictedWords(...words) {
+    return function (control: FormControl): { [key: string]: any } {
+      const matches = words.filter(w => control.value.includes(w));
+      return matches
+        ? { 'restrictedWords': matches.join() }
+        : null;
+    }
   }
 }
