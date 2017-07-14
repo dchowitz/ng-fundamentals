@@ -13,7 +13,14 @@ export class EventService {
      }, 100);
     return subject;
   }
+
   getEvent(id: number):Event {
     return eventList.find(e => e.id === id);
+  }
+
+  saveEvent(event: Event) {
+    event.id = 999;
+    event.sessions = [];
+    eventList.push(event);
   }
 }
